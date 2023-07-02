@@ -1,9 +1,9 @@
-name: "Deploy"
+name: "Single Workflow"
 
 on: 'push'
 
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,5 +13,7 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run test
+      - name: Build
+        run: npm run build
       - name: Deploy
         run: echo "Deploying..."
