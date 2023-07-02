@@ -1,0 +1,11 @@
+name: 'Issue Handling'
+
+on: "issues"
+
+jobs:
+  log_issue_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log
+        run: |
+          echo "Event: ${{ toJson(github.event.issue) }}"
